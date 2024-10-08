@@ -1,26 +1,30 @@
 module.exports = (Sequelize, sequelize, DataTyes) =>{
-    return sequelize.define('user', {
+    return sequelize.define('userModel', {
         ...require('./cors')(Sequelize, DataTyes),
         name: {
             type: DataTyes.STRING(255),
-            allowNull: false
+            allowNull: true,
+            defaultValue:null,
         },
 
         email: {
             type: DataTyes.STRING(255),
-            allowNull: false
+            allowNull: true,
+            defaultValue:null,
         },
 
         gender: {
             type: DataTyes.STRING(255),
-            allowNull: false
+            allowNull: true,
+            defaultValue:null,
         },
 
         age:{
             type: DataTyes.INTEGER,
-            allowNull: false
+            allowNull: true,
+            defaultValue:null,
         }
     },{
-        tableName: 'user'
+        tableName: 'userModel'
     })
 }
